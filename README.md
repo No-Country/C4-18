@@ -18,6 +18,6 @@ Ingresamos al directorio c4-18-m y ejecutamos:
 Ejecuta la aplicacion en modo desarrollo.\
 Abre [http://localhost:3000](http://localhost:3000) para verlo en el explorador (deberia abrir automatico al ejecutar)
 
-Lapagina se actualizara automaticamente al realizar cambios\
+La pagina se actualizara automaticamente al realizar cambios\
 Se mostraran errores de lint en la consola.
 
