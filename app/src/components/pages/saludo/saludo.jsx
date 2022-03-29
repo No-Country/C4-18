@@ -8,7 +8,7 @@ export const Saludo = () => {
           <h1>App G18 No Country</h1>
           <p>Desarrollo de app de publicacion y alquiler de hospedajes</p>
         </div>
-        <img src={logo} alt="ACA VA EL LOGO" className="logo" />
+        <img src={logo} alt="logo" className="logo" />
     </div>
   );
 };
