@@ -1,0 +1,23 @@
+.saludo{
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+}
+
+.titulo {
+  padding: 2rem 4rem;
+
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+  }
+}
+
+.logo {
+  width: 200px;
+  align-self: center;
+}
