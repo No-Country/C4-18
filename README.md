@@ -1,7 +1,7 @@
 
 Para copiar el repositorio:
 
-En el directorio del projecto ejecutar:
+En el directorio del proyecto ejecutar:
 
 ### git clone https://github.com/No-Country/c4-18-m.git    
 

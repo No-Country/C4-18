@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Saludo } from './components/pages/saludo/saludo';
 
 function App() {
   return (
     <div className="App">
-    <h1>Grupo 18 - No country</h1>
+
+    <Saludo />
+    
     </div>
   );
 }
