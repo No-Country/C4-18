@@ -5,7 +5,7 @@ En el directorio del projecto ejecutar:
 
 ### git clone https://github.com/No-Country/c4-18-m.git    
 
-Ingresamos al directorio c4-18-m y ejecutamos:
+Ingresamos al directorio c4-18-m/app y ejecutamos:
 
 ### npm install
 
