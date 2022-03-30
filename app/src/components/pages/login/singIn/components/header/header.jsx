@@ -1,6 +1,6 @@
 import './header.scss';
-import loguito from '../../../assets/logoHeader.svg';
-//import loguito from '../../../assets/logoHeader-1.png';
+import loguito from '../../../assets/logoHeader2.png';
+
 
 function HeaderLogin() {
   return (
