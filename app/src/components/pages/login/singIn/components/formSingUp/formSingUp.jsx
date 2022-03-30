@@ -96,7 +96,7 @@ function FormSingUp() {
 								<img src={google} alt="googltBtn" />
 							</div>
 
-							<p>Tienes una cuenta? <span>Inicia Sesión</span></p>
+							<p>Tienes una cuenta? <span>Iniciar Sesión</span></p>
 						</form>
 					)}
 				</Formik>
