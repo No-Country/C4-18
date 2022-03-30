@@ -1,12 +1,10 @@
 import './App.scss';
-import { Saludo } from './components/pages/saludo/saludo';
+import Login from './components/pages/login/singUp/singUp'
 
 function App() {
   return (
-    <div className="App">
-
-    <Saludo />
-    
+    <div className="App">    
+      <Login />  
     </div>
   );
 }
