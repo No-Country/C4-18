@@ -1,5 +1,5 @@
 import './App.scss';
-import Login from './components/pages/login/singIn/singIn'
+import Login from './components/pages/login/singUp/singUp'
 
 function App() {
   return (
