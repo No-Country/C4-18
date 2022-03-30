@@ -1,6 +1,6 @@
 import './singIn.scss';
-import Header from './components/header/header'
-import FormSingIn from './components/formSingIn/formSingIn';
+import Header from '../components/header/header'
+import FormSingIn from '../components/formSingIn/formSingIn';
 
 function SingIn() {
   return (

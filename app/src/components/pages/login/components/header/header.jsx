@@ -1,5 +1,5 @@
 import './header.scss';
-import loguito from '../../../assets/logoHeader2.png';
+import loguito from '../../assets/logoHeader2.png';
 
 
 function HeaderLogin() {

@@ -1,7 +1,7 @@
 import './formSingIn.scss';
 import React from 'react';
 import { Formik } from 'formik';
-import google from '../../../assets/googleBtn-Desktop.svg';
+import google from '../../assets/googleBtn-Desktop.svg';
 
 function FormSingIn() {
 	return (
