@@ -1,10 +1,10 @@
-import './botonSingIn.scss' 
+import './botonSingIn.scss'
 
-export const BotonSingIn = () => {
+export const BotonSignIn = () => {
 
-return (
-<a href="/login" className="signIn">
-    <p>Sing In</p>
-</a>
-)
+	return (
+		<a href="/login" className="signIn">
+			<p>Sign In</p>
+		</a>
+	)
 }

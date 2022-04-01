@@ -1,23 +1,23 @@
 import "./listaLink.scss";
-import { BotonSingIn } from "../../molecules/botonSingIn/botonSingIn";
+import { BotonSignIn } from "../../molecules/botonSingIn/botonSingIn";
 
 export const ListaLink = () => {
   return (
     <ul>
       <li>
-        <a>Encuentranos</a>
+        <a href="./">Encuentranos</a>
       </li>
       <li>
-        <a>Nosotros</a>
+        <a href="./">Nosotros</a>
       </li>
       <li>
-        <a>Servicios</a>
+        <a href="./">Servicios</a>
       </li>
       <li>
-        <a>Contactanos</a>
+        <a href="./">Contactanos</a>
       </li>
       <li className="invertButton">
-        <BotonSingIn />
+        <BotonSignIn />
       </li>
     </ul>
   );
