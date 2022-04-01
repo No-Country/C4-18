@@ -6,7 +6,7 @@ function HeaderLogin() {
   return (
     <div className="conatiner-header">   
         <div className='header'> 
-            <img src={loguito} alt='logoHeader'/>
+           <a href="/"><img src={loguito} alt='logoHeader'/></a> 
         </div>       
     </div>
   );
