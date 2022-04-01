@@ -1,10 +1,13 @@
 import './App.scss';
-import Login from './components/pages/login/singUp/singUp'
+import { MainViewContainer } from './components/templates/mainViewContainer/mainViewContainer';
 
 function App() {
   return (
-    <div className="App">    
-      <Login />  
+    <div className="App">
+
+    <MainViewContainer />
+    
+    
     </div>
   );
 }
