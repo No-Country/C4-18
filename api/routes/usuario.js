@@ -1,4 +1,5 @@
 const express = require('express');
+const authMiddleware = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 
@@ -12,9 +13,9 @@ router.get("/:id", );
 router.get("/email/:id", );
 
 // Delete = /api/usuario/:id - Borrar un usuario por Id
-router.delete("/:id", );
+router.delete("/:id", authMiddleware);
 
 // Update = /api/usuario/:id - Editar un usuario por Id
-router.put("/:id", );
+router.put("/:id", authMiddleware);
 
 module.exports = router;
