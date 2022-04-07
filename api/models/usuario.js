@@ -22,19 +22,23 @@ const UserScheme = new mongoose.Schema(
             type: String
         }, 
         avatar: {
-            type: String
+            type: Array,
+            default: ["https://storage.googleapis.com/homenocountry-7389e.appspot.com/img-624eee4dbbf3d81f40f9d001.1649340188620.png"]            
         },
         mediosDePago: {
-            type: Array
+            type: Array,
+            default: []
         },
         reservas: {
-            type: Array
+            type: Array,
+            default: []
         },
         posts: {
-            type: Object
+            type: Object,
+            default: {}
         },
         rol: {
-            type: ["admin", "user"],
+            type: String,
             default: "user"
         }
 
