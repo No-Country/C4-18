@@ -1,18 +1,14 @@
 const {check} = require('express-validator');
+const { validateResult } = require('../utils/handleValidator');
 
 const validatePost = [
     check('titulo').exists().notEmpty(),
     check('descripcion').exists().notEmpty(),
     check('condiciones').exists().notEmpty(),
-    check('ubicacion').exists().notEmpty(),
-    check('precio').exists().notEmpty(),
-    check('imagenes').exists().notEmpty(),
-    check('imagenes.imgCaratula').exists().notEmpty(),
-    check('imagenes.imgGaleria').exists().notEmpty(),
-    check('idUsuario').exists().notEmpty(),
-    check('reservas').exists(),
-    check('servicios').exists().notEmpty(),
-    check('rating').exists(), 
+    check('ubicacion').exists(),
+    check('precio').exists().notEmpty(),    
+    check('idUsuario').exists().notEmpty(),    
+    check('servicios').exists(),    
     (req, res, next)=>{
         validateResult(req, res, next);
     }   
