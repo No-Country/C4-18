@@ -3,6 +3,7 @@ import {MainViewContainer} from '../../templates/mainViewContainer/mainViewConta
 import { PropertiesViewContainer } from '../../templates/propertiesViewContainer/propertiesViewContainer'
 import { OpinionViewContainer } from '../../templates/opinionViewContainer/opinionViewContainer'
 import { CiudadesViewContainer } from '../../templates/ciudadesViewContainer/ciudadesViewContainer'
+import { Footer } from '../../organisms/footer/footer'
 
 export const LandingPage =()=>{
 
@@ -14,7 +15,7 @@ return(
 <CiudadesViewContainer/>
 <PropertiesViewContainer/>
 <OpinionViewContainer/>
-
+<Footer/>
 </div>
 
 )

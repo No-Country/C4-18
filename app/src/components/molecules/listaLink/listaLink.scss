@@ -1,46 +1,36 @@
 .listaLink{
-
-
-ul {
-    position: absolute;
-    right: 0px;
-    list-style: none;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  
+  
+  ul {
     height: 100%;
+    list-style: none;
     display: flex;
     flex-direction: row;
-    
-    li {
-      margin: 0rem 1rem;
-      height: 100%;
-      flex-direction: row;
-      display: flex;
-      align-items: center;
-      padding: 0.5rem;
-      a{
-       /*  font-family: 'Inter';
-        font-style: normal; */
-        font-weight: 500;
-        font-size: 18px;
-        //line-height: 29px;
-        text-align: center;
-        color: #FFFFFF;
-        text-decoration: none;
-        cursor: pointer;
-        &:hover {
-          background-color:#79797900;
-          // height: 50%;
-          //color: #303030;
-        }
-      }
+
+  li {
+    margin: 0rem 1rem;
+   height: 100%;
+   flex-direction: row;
+   display: flex;
+  align-items: center;
+    a{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      color: #FFFFFF;
     }
   }
-}
+}}
 
-  .invertButton{
-      background-color:#303030;
-      cursor: pointer;
-      &:hover{
+.invertButton{
+    background-color:#303030;
+    &:hover{
         background-color: rgba(0, 0, 0, 0.5);
-        color: #FFFFFF;
-      }
-  }
+    }
+}
