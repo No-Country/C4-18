@@ -14,7 +14,8 @@ router.get("/", getPostsController);
 router.get("/:campo/:valor", getPostController );
 
 // Post = /api/propiedades - Crear un post
-router.post("/", authMiddleware, upload.any("imagenes"), validatePost, uploadFileMiddleware ,createPostController);
+// router.post("/", authMiddleware, upload.any("imagenes"), validatePost, uploadFileMiddleware ,createPostController);
+router.post("/", authMiddleware, upload.any("imagenes"), uploadFileMiddleware ,createPostController);
 
 // Delete = /api/propiedades/:id - Eliminar una propiedad
 router.delete("/:id", authMiddleware, deletePostController);

@@ -32,6 +32,24 @@ const PostScheme = new mongoose.Schema(
     rating: {
       type: Number,
     },
+    ciudad:{
+      type: String,
+    },
+    capacidad:{
+      type: Number,
+    },
+    ducha:{
+      type: Boolean,
+    },
+    internet:{
+      type: Boolean,
+    },
+    estacionamiento:{
+      type: Boolean,
+    },
+    metraje:{
+      type: Number,
+    },
   },
   {
     timestamps: true,

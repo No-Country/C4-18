@@ -4,12 +4,10 @@
             "titulo": "",
             "descripcion": "Aqui va la descripcion",
             "condiciones": "",
-            "ubicacion": {
-                "pais": "Inglaterra",
-                "ciudad": "Londres",
-                "direccion": "London SW1A 1AA, United Kingdom",
-                "coordenadas": "51.501306, -0.141797"
-            },
+            "pais": "Inglaterra",
+            "ciudad": "Londres",
+            "direccion": "London SW1A 1AA, United Kingdom",
+            "coordenadas": "51.501306, -0.141797",
             "precio": "1500",
             "imagenes": [],
             "idUsuario": "",
@@ -20,20 +18,19 @@
                 "internet": "true",
                 "metraje": "150"
             },
-            "reservas":[
+            "reservas": [
                 {
-                    "id-locatario":"",
-                    "fecha-inicio":"",
-                    "fecha-fin":"",
-                    "pago":{
-                        "fecha":"05/04/2022",
-                        "monto":"",
-                        "medio-de-pago":""
-
+                    "id-locatario": "",
+                    "fecha-inicio": "",
+                    "fecha-fin": "",
+                    "pago": {
+                        "fecha": "05/04/2022",
+                        "monto": "",
+                        "medio-de-pago": ""
                     }
                 }
             ],
-            "rating":"4,9"
+            "rating": "4,9"
         }
     ]
 }
