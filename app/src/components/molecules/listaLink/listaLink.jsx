@@ -3,9 +3,18 @@ import { BotonSignIn } from "../../molecules/botonSingIn/botonSingIn";
 
 export const ListaLink = () => {
   return (
+<<<<<<< HEAD
+    <div className="listaLink">
+
+    
+    <ul >
+      <li>
+        <a>Encuentranos</a>
+=======
     <ul>
       <li className="efect">
         <a href="./">Encuentranos</a>
+>>>>>>> 630b9f1767cd1702ced19ecd057dac0b853c9fad
       </li>
       <li>
         <a href="./">Nosotros</a>
@@ -20,5 +29,7 @@ export const ListaLink = () => {
         <BotonSignIn />
       </li>
     </ul>
+
+    </div>
   );
 };
