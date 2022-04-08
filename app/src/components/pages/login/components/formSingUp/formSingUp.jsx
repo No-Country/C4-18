@@ -1,4 +1,5 @@
 import './formSingUp.scss';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { Formik } from 'formik';
 import google from '../../assets/googleBtn-Desktop.svg';
@@ -96,7 +97,7 @@ function FormSingUp() {
 								<img src={google} alt="googltBtn" />
 							</div>
 
-							<p>Tienes una cuenta? <span>Iniciar Sesión</span></p>
+							<p>Tienes una cuenta? <Link to="/login"><span>Iniciar Sesión</span></Link></p>
 						</form>
 					)}
 				</Formik>

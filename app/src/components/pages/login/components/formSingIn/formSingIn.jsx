@@ -1,4 +1,5 @@
 import './formSingIn.scss';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { Formik } from 'formik';
 import google from '../../assets/googleBtn-Desktop.svg';
@@ -70,7 +71,7 @@ function FormSingIn() {
 								<img src={google} alt="googltBtn"/>
 							</div>
 
-							<p>No tienes una cuenta? <span>Registrate</span></p>
+							<p>No tienes una cuenta?  <Link to="/login/register"><span>Registrate</span></Link></p>
 						</form>
 					)}
 				</Formik>

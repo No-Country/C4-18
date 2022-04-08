@@ -1,0 +1,40 @@
+.cardContainer {
+  width: 360px;
+  height: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 15px;
+  overflow: auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+  background-position: center;
+  background-size: cover;
+  margin: 1rem;
+ .ciudad{
+  font-family: 'Philosopher', sans-serif;
+ }
+ .precio{
+  font-family: 'Roboto', 500, sans-serif;
+  font-weight: bold;
+  font-size: 20px
+ }
+  &:hover{
+    transform: scale(1.01);
+  }
+}
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #303030;
+  height: 170px;
+  padding: 8px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+
+
+  .ciudad {
+    border-bottom: 3px #ffffff solid;
+    width: 125px;
+  }
+}

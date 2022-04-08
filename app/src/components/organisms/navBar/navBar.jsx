@@ -5,7 +5,7 @@ import { ListaLink } from "../../molecules/listaLink/listaLink";
 export const NavBar = () => {
   return (
     <div className="navBar">
-      <img src={logoNavBar} alt="Home" className="logoNavBar" />
+     <img src={logoNavBar} alt="Home" className="logoNavBar" />
       <ListaLink />
     </div>
   );
