@@ -1,0 +1,26 @@
+.propertiesViewLandingPage {
+    padding: 15px;
+  max-width: 1440px;
+//   height: 150vh;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+
+  .seccionTitle {
+    font-family: "Philosopher", sans-serif;
+    font-size: 2rem;
+    margin-top: 140px;
+  }
+  .lineRed {
+      margin-top: 3px;
+    height: 3px;
+    border-bottom: #f00707 3px solid;
+    width: 325px;
+  }
+  .lineGrey {
+    height: 1px;
+    margin-bottom: 50px;
+    border-top: #e0e6e8 1px solid;
+    width: 800px;
+  }
+}

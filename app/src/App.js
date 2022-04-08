@@ -1,20 +1,23 @@
 import "./App.scss";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { MainViewContainer } from "./components/templates/mainViewContainer/mainViewContainer";
-import SingIn  from "./components/pages/login/singIn/signIn";
+import { LandingPage } from "./components/pages/landingPage/landingPage";
+import SingIn from "./components/pages/login/singIn/signIn";
 import SignUp from "./components/pages/login/singUp/singUp";
+import { PropertyProvider } from "./contexts/propertyContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<MainViewContainer />} />
-          <Route path="login" element={<SingIn />} />
-          <Route path="/login/register" element={<SignUp />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <PropertyProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="login" element={<SingIn />} />
+            <Route path="/login/register" element={<SignUp />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </PropertyProvider>
   );
 }
 
