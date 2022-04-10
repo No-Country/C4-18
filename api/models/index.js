@@ -1,6 +1,7 @@
 const models = {
     usersModel: require('./usuario'),
-    postsModel: require('./propiedades')
+    postsModel: require('./propiedades'),
+    reservationModel: require('./reservas')
 };
 
 module.exports = models;
