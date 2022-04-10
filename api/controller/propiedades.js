@@ -41,8 +41,10 @@ const getPostController = async (req, res) => {
 const createPostController = async (req, res) => {
     try {
       console.log('Files', req.files)
-      const body = {...matchedData(req), imagenes: req.files.firebaseUrl};
-      console.log({body})
+      let imagenes = [];
+      if (req.files){ imagenes = [...imagenes, ...req.files.firebaseUrl]}
+      const body = {...matchedData(req), imagenes: imagenes};
+      console.log(matchedData(req))
       const post = await postsModel.create(body);
       
       res.send({post});

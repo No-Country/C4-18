@@ -11,20 +11,19 @@ export const PropertyProvider = ({ children }) => {
   const [property, setProperty] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch("/properties.json")
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         return res.json();
-  //       }
-  //     })
-  //     .then((data) => {
-  //       setProperties(data);
-  //       console.log(data);
-  //     })
-  //     .catch(console.error("Error al realizar el fetch de propiedades"))
-  //     .finally(setIsLoading(false), console.log(properties));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:8000/api/propiedades")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        setProperties(data.data);
+      })
+      .catch(console.error("Error al realizar el fetch de propiedades"))
+      .finally(setIsLoading(false));
+  }, []);
 
   const addProperty = () => {};
   const filterProperty = () => {};

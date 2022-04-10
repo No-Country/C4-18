@@ -13,7 +13,7 @@ const PostScheme = new mongoose.Schema(
     },
     ubicacion: {
       type: Object,
-    },
+    },    
     precio: {
       type: Number,
     },
@@ -27,11 +27,12 @@ const PostScheme = new mongoose.Schema(
       type: Array,
     },
     servicios: {
-      type: Object,
+      type: Object   
     },
     rating: {
       type: Number,
     },
+    
   },
   {
     timestamps: true,
