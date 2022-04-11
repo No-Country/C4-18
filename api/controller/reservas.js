@@ -1,5 +1,6 @@
 const { matchedData } = require("express-validator");
 const { reservationModel, usersModel, postsModel } = require("../models");
+const { handleEmail } = require("../utils/handleEmail");
 const { handleErrorResponse, handleHttpError } = require("../utils/handleError");
 
 
@@ -60,6 +61,17 @@ const createReservationController = async (req, res) => {
         }
         
         const data = await reservationModel.create(body);
+
+        if (data) {
+          handleEmail({
+            idReserva: data._id,
+            nombre: checkUser.nombre,
+            telefono: checkUser.telefono,
+            correo: checkUser.correo,
+            idPost: checkPost._id,
+            tituloPost: checkPost.titulo,            
+          });
+        }
         res.send({ data });
       } catch (e) {
         handleHttpError(res, e);
