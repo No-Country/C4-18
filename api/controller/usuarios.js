@@ -1,4 +1,5 @@
 const { usersModel } = require("../models");
+const { handleEmail } = require("../utils/handleEmail");
 const { handleErrorResponse, handleHttpError } = require("../utils/handleError");
 
 
@@ -82,6 +83,23 @@ const updateUserController = async (req, res) => {
     }
 };
 
+// Post = /api/usuario/contacto - Enviar un mensaje de contacto
+// router.post("/contacto", contactUserController);
+const contactUserController = async (req, res)=>{
+  try {
+    
+    const response = await handleEmail({
+      nombre: req.body.nombre,
+      correo: req.body.correo,
+      comentario: req.body.comentario
+    },"contacto")
+
+    res.send({response})
+  } catch (e) {
+    handleHttpError(res, e);
+  }
+}
 
 
-module.exports = {getUsersController, getUserController, deleteUserController, updateUserController}
+
+module.exports = {getUsersController, getUserController, deleteUserController, updateUserController, contactUserController}
