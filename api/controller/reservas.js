@@ -70,7 +70,7 @@ const createReservationController = async (req, res) => {
             correo: checkUser.correo,
             idPost: checkPost._id,
             tituloPost: checkPost.titulo,            
-          });
+          }, "reserva");
         }
         res.send({ data });
       } catch (e) {
