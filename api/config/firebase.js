@@ -18,7 +18,7 @@ const uploadFileMiddleware = async (req, res, next)=>{
 
     req.files.firebaseUrl = [];
     const idUsuario = req.params.id ? req.params.id : req.body.idUsuario
-
+    let imgNum = 0;
     for(let imagen of req.files){
         const isPhoto = imagen.mimetype.startsWith('image/');
         if (!isPhoto) {
@@ -26,7 +26,7 @@ const uploadFileMiddleware = async (req, res, next)=>{
             return;
         } 
         const img = imagen;
-        const imgName = `img-${idUsuario}.${Date.now()}.${img.originalname.split(".").pop()}`;
+        const imgName = `img-${imgNum}-${idUsuario}-${Date.now()}-${img.originalname.split(".").pop()}`;
 
         const file = await bucket.file(imgName);
        
@@ -43,7 +43,9 @@ const uploadFileMiddleware = async (req, res, next)=>{
         });
         req.files.firebaseUrl.push(`https://storage.googleapis.com/${process.env.BUCKET}/${imgName}`);
         stream.end(img.buffer)
-    }     
+        imgNum++;
+    }
+    imgNum = 0;     
     console.log('IMAGENES:', req.files.firebaseUrl)
     next();
 }
