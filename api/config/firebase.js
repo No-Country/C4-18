@@ -29,7 +29,7 @@ const uploadFileMiddleware = async (req, res, next)=>{
         const imgName = `img-${idUsuario}.${Date.now()}.${img.originalname.split(".").pop()}`;
 
         const file = await bucket.file(imgName);
-
+       
         const stream = file.createWriteStream({
             metadata: {
                 contentType: img.mimetype,
@@ -48,4 +48,12 @@ const uploadFileMiddleware = async (req, res, next)=>{
     next();
 }
 
-module.exports = {uploadFileMiddleware};
+const deleteImage = async (imgName)=>{
+
+    const file = bucket.file(imgName);
+    const response = await file.delete()
+    console.log('IMAGENDELETE: ', file);
+    return response;
+}
+
+module.exports = {uploadFileMiddleware, deleteImage};

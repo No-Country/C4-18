@@ -1,4 +1,5 @@
 const { matchedData } = require("express-validator");
+const { deleteImage } = require("../config/firebase");
 const { postsModel } = require("../models");
 const { handleErrorResponse, handleHttpError } = require("../utils/handleError");
 
@@ -78,6 +79,10 @@ const deleteImgPostController = async (req, res) => {
     }) 
    
     console.log("DATA:", filterImages)
+
+    const responseDeleteImg = await deleteImage(idImg);
+
+    console.log("Respuesta delete imagen: ", responseDeleteImg);
 
     res.send({updatedPost})
 
