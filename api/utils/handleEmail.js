@@ -16,8 +16,8 @@ const handleEmail = async (body, type) => {
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' }
         })        
-
-        return result;
+        console.log("status", result.status)
+        return {status: result.status, statusText: result.statusText};
         
     } catch (error) {
        console.log("ERROR:", error)
