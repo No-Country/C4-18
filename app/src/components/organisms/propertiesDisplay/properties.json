@@ -20,20 +20,19 @@
                 "internet": "true",
                 "metraje": "150"
             },
-            "reservas":[
+            "reservas": [
                 {
-                    "id-locatario":"",
-                    "fecha-inicio":"",
-                    "fecha-fin":"",
-                    "pago":{
-                        "fecha":"05/04/2022",
-                        "monto":"",
-                        "medio-de-pago":""
-
+                    "id-locatario": "",
+                    "fecha-inicio": "",
+                    "fecha-fin": "",
+                    "pago": {
+                        "fecha": "05/04/2022",
+                        "monto": "",
+                        "medio-de-pago": ""
                     }
                 }
             ],
-            "rating":"4,9"
+            "rating": "4,9"
         }
     ]
 }

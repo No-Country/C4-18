@@ -1,4 +1,5 @@
 const { matchedData } = require("express-validator");
+const { deleteImage } = require("../config/firebase");
 const { postsModel } = require("../models");
 const { handleErrorResponse, handleHttpError } = require("../utils/handleError");
 
@@ -41,8 +42,10 @@ const getPostController = async (req, res) => {
 const createPostController = async (req, res) => {
     try {
       console.log('Files', req.files)
-      const body = {...matchedData(req), imagenes: req.files.firebaseUrl};
-      console.log({body})
+      let imagenes = [];
+      if (req.files){ imagenes = [...imagenes, ...req.files.firebaseUrl]}
+      const body = {...matchedData(req), imagenes: imagenes};
+      console.log(matchedData(req))
       const post = await postsModel.create(body);
       
       res.send({post});
@@ -76,6 +79,10 @@ const deleteImgPostController = async (req, res) => {
     }) 
    
     console.log("DATA:", filterImages)
+
+    const responseDeleteImg = await deleteImage(idImg);
+
+    console.log("Respuesta delete imagen: ", responseDeleteImg);
 
     res.send({updatedPost})
 

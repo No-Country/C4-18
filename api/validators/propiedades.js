@@ -4,8 +4,8 @@ const { validateResult } = require('../utils/handleValidator');
 const validatePost = [
     check('titulo').exists().notEmpty(),
     check('descripcion').exists().notEmpty(),
-    check('condiciones').exists().notEmpty(),
-    check('ubicacion').exists(),
+    check('condiciones').exists(),
+    check('ubicacion').exists(),    
     check('precio').exists().notEmpty(),    
     check('idUsuario').exists().notEmpty(),    
     check('servicios').exists(),    
