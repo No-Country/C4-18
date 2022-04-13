@@ -1,0 +1,14 @@
+.container {
+    align-self: center;
+    margin: 0rem 2rem;
+    height: 80vh;
+    max-height: 800px;
+    width: 95vw;
+    max-width: 1700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 8vh 13vh 13vh 13vh 13vh 8vh;
+    grid-auto-columns: 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw;
+    grid-auto-rows: 8vh 13vh 13vh 13vh 13vh 8vh;
+    grid-gap: 1em 1em;
+}

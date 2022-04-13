@@ -3,8 +3,6 @@ import "./opinionDisplay.scss"
 
 export const OpinionDisplay =() =>{
 
-
-
 return(
 <div className="opinionDisplay">
 <div className="buttonLeft"></div>
@@ -15,7 +13,4 @@ return(
 <div className="buttonRight"></div>
 </div>
 )
-
-
-
 }

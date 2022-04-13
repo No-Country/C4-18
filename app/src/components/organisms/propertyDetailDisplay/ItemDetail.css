@@ -1,0 +1,84 @@
+.addProductButton {
+    margin-top: 1rem;
+    width: 90%;
+    height: 2.5rem;
+    max-width: 90%;
+    border-radius: 5px;
+    border: 0px;
+    justify-content: center;
+    background-color: #0038b1;
+    color: #fff;
+}
+
+.miniature {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    background-color: #e0e0e07d;
+    border: 1px #d3d3d37d solid;
+}
+
+.miniatureOne {
+    grid-area: 2 / 1 / 3 / 2;
+    justify-content: center;
+    display: flex;
+}
+
+.miniatureTwo {
+    grid-area: 3 / 1 / 4 / 2;
+    justify-content: center;
+    display: flex;
+}
+
+.miniatureThree {
+    grid-area: 4 / 1 / 5 / 2;
+    justify-content: center;
+    display: flex;
+}
+
+.miniatureFour {
+    grid-area: 5 / 1 / 6 / 2;
+    justify-content: center;
+    display: flex;
+}
+
+.itemImg {
+    grid-area: 2 / 2 / 6 / 6;
+    display: flex;
+    justify-content: center;
+    background-color: #e0e0e07d;
+    border: 1px #d3d3d37d solid;
+}
+
+.itemImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.detail {
+    grid-area: 2 / 6 / 6 / 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.detail h5 {
+    font-weight: bold;
+}
+
+.detail h4 {
+    margin: 0;
+}
+
+.description {
+    max-width: 80%;
+    text-align: left;
+}
+
+.itemFooter {
+    grid-area: 6 / 1 / 7 / 10;
+}
