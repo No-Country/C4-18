@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useProperty } from '../../../contexts/propertyContext'
-import { PropertiesDisplay } from '../../organisms/PropertiesDisplay/PropertiesDisplay'
+import { PropertiesDisplay } from '../../organisms/propertiesDisplay/propertiesDisplay'
 import './propertiesViewContainer.scss'
 
 export const PropertiesViewContainer =()=>{

@@ -1,4 +1,4 @@
-import "./PropertiesDisplay.scss";
+import "./propertiesDisplay.scss";
 import { PropertyCard } from "../../molecules/propertyCard/propertyCard";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
