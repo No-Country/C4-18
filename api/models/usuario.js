@@ -23,7 +23,7 @@ const UserScheme = new mongoose.Schema(
         }, 
         avatar: {
             type: Array,
-            default: ["https://storage.googleapis.com/homenocountry-7389e.appspot.com/img-624eee4dbbf3d81f40f9d001.1649340188620.png"]            
+            default: ["https://storage.googleapis.com/homenocountry-7389e.appspot.com/img-624eefc15144031e64ada31b.1649787325072.png"]            
         },
         mediosDePago: {
             type: Array,

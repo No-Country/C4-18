@@ -7,8 +7,9 @@ export const MainViewContainer = () => {
     <div className="mainViewBackground">
       <div className="mainView">
         <NavBar />
-        <LogoCentral /> 
+        <LogoCentral />        
       </div>
+      
     </div>
   );
 };

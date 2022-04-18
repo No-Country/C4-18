@@ -3,8 +3,9 @@ import { BotonSignIn } from "../../molecules/botonSingIn/botonSingIn";
 
 export const ListaLink = () => {
   return (
-    <ul>
-      <li className="efect">
+    <div className="listaLink">
+    <ul >
+      <li>
         <a href="./">Encuentranos</a>
       </li>
       <li>
@@ -20,5 +21,7 @@ export const ListaLink = () => {
         <BotonSignIn />
       </li>
     </ul>
+
+    </div>
   );
 };
