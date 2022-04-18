@@ -1,32 +1,48 @@
-import "./propertiesDisplay.scss";
-
+import "./PropertiesDisplay.scss";
 import { PropertyCard } from "../../molecules/propertyCard/propertyCard";
-import { useState, useEffect } from "react";
-import { useProperty } from "../../../contexts/propertyContext";
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
+export const PropertiesDisplay = (props) => {
+  const [seleccion, setSeleccion] = useState([]);
 
-export const PropertiesDisplay = () => {
-const {properties} = useProperty()
+  useEffect(() => {
+    if (props.cantidad !== null) {
+      let element = [];
+      for (let i = 0; i < props.cantidad; i++) {
+        element = [...element, props.propiedades[i]];
+        setSeleccion(element);
+      }
+    } else {
+      setSeleccion(props.propiedades);
+    }
+  }, [props]);
 
-  const showMoreProperties = () => {
-    console.log("Funca el click");
-  };
-
-    
 
   return (
     <>
       <div className="propertiesCardShow">
-        <PropertyCard
-          imgPrincipal={
-            properties[0].imagenes[0]
-          }
-          ciudad={"Londres"}
-          direccion={properties[0].ubicacion}
-          precio={1500}
-        />
+        {seleccion.length ? (
+          seleccion.map((data) => (
+            <NavLink to={`/producto/${data._id}`}>
+            <PropertyCard
+              key={data._id}
+              id={data._id}
+              imgPrincipal={data.imagenes[0]}
+              ciudad={data.ubicacion.ciudad}
+              direccion={data.ubicacion.direccion}
+              precio={data.precio}
+              servicios={data.servicios}
+            />
+          </NavLink>
+      
+          ))
+        ) : (
+          <>
+            <p>Loading ...</p>
+          </>
+        )}
       </div>
-      <button onClick={showMoreProperties} className="verMas">Ver mas</button>
     </>
   );
 };

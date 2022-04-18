@@ -1,0 +1,65 @@
+.detalleTitulo {
+  height: 14%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+ 
+  .iconos {
+    display: flex;
+    img {
+      height: 50%;
+    }
+  }
+}
+.detalleGeneral {
+  border-top: #a0a0a0 solid 1px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ 
+}
+.detalleCapacidad {
+  border-top: #a0a0a0 solid 1px;
+  height: 14%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.detallePrecio {
+  border-top: #a0a0a0 solid 1px;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 5px;
+
+
+}
+.detalleDisponibilidad {
+  border-top: #a0a0a0 solid 1px;
+  height: 14%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  input{
+      border: none;
+      flex-direction: row-reverse;
+      
+}
+.fechaInicial{
+    border-right: lightgray 1px solid;
+    padding-right: 15px;
+}
+
+
+  
+}
+
+.botonConsultar{
+    height: 32px;
+    border-radius: 15px;
+}

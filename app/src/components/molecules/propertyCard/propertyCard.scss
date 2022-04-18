@@ -26,14 +26,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #303030;
+  background-color: rgba(0, 0, 0, 0.7);
   height: 170px;
   padding: 8px;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
 
-
-  .ciudad {
+  .line{
+    height: 3px;
     border-bottom: 3px #ffffff solid;
     width: 125px;
   }
