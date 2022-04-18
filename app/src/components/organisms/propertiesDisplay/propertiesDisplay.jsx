@@ -1,6 +1,7 @@
-import "./propertiesDisplay.scss";
+import "./PropertiesDisplay.scss";
 import { PropertyCard } from "../../molecules/propertyCard/propertyCard";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const PropertiesDisplay = (props) => {
   const [seleccion, setSeleccion] = useState([]);
@@ -23,6 +24,7 @@ export const PropertiesDisplay = (props) => {
       <div className="propertiesCardShow">
         {seleccion.length ? (
           seleccion.map((data) => (
+            <NavLink to={`/producto/${data._id}`}>
             <PropertyCard
               key={data._id}
               id={data._id}
@@ -32,6 +34,8 @@ export const PropertiesDisplay = (props) => {
               precio={data.precio}
               servicios={data.servicios}
             />
+          </NavLink>
+      
           ))
         ) : (
           <>

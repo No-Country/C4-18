@@ -1,11 +1,13 @@
-import "./filterViewContainer.scss";
-import { PropertiesDisplay } from "../../organisms/propertiesDisplay/propertiesDisplay";
+import "./FilterViewContainer.scss";
+
 import { useEffect, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useProperty } from "../../../contexts/propertyContext";
+import { PropertiesDisplay } from "../../organisms/PropertiesDisplay/PropertiesDisplay";
 
 export const FilterViewContainer = () => {
+  
   const {
     properties,
     fetchProperties,
@@ -14,15 +16,36 @@ export const FilterViewContainer = () => {
     filterProperties,
     getByFilter,
   } = useProperty();
-  const [propiedades, setPropiedades] = useState(properties);
+
+  const [propiedades, setPropiedades] = useState([]);
   const [filtroPais, setFiltroPais] = useState();
   const [filtroCiudad, setFiltroCiudad] = useState();
   const [capacidad, setCapacidad] = useState(0);
   const [loading, setLoading] = useState(true);
 
+  
+  const getProperties = async ()=>{
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    
+   const response = await fetch("http://localhost:8000/api/propiedades", requestOptions)
+    const data = await response.json()
+    setPropiedades(data.data)
+}
+
 useEffect(()=>{
-  setPropiedades(properties)
-})
+    
+    getProperties()
+
+},[])
+
+useEffect(()=>{
+  console.log(propiedades)
+  
+},[propiedades])
+
 
 const funcionFiltro =  (array, pais, ciudad) =>{
 
@@ -57,12 +80,12 @@ ciudad ?
   };
 
 
-  // useEffect(() => {
-  //   if (filtroPais !== " " || filtroCiudad !== " " || capacidad !== 0) {
-  //     getByFilter(propiedades, filtroPais, filtroCiudad, null, capacidad);
-  //     setPropiedades(filterProperties);
-  //   }
-  // }, [filtroCiudad, filtroPais, capacidad]);
+  useEffect(() => {
+    if (filtroPais !== " " || filtroCiudad !== " " || capacidad !== 0) {
+      getByFilter(propiedades, filtroPais, filtroCiudad, null, capacidad);
+      setPropiedades(filterProperties);
+    }
+  }, [filtroCiudad, filtroPais, capacidad]);
 
 useEffect(()=>{
   if (filtroPais !== " " || filtroCiudad !== " " || capacidad !== 0) {
@@ -109,11 +132,7 @@ useEffect(()=>{
       </div>
       <div className="lineRed"></div>
       <div className="lineGrey"></div>
-      {properties.length ? (
-        <PropertiesDisplay propiedades={propiedades} cantidad={null} />
-      ) : (
-        <></>
-      )}
+    <PropertiesDisplay propiedades={propiedades} cantidad={null}/>
     </div>
   );
 };

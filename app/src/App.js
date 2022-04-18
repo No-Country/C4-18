@@ -5,6 +5,7 @@ import SingIn from "./components/pages/login/singIn/signIn";
 import SignUp from "./components/pages/login/singUp/singUp";
 import { PropertyProvider } from "./contexts/propertyContext";
 import { SearchPage } from "./components/pages/searchPage/searchPage";
+import { DetailPage } from "./components/pages/detailPage/detailPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="login" element={<SingIn />} />
             <Route path="/login/register" element={<SignUp />} />
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/producto/:Id" element={<DetailPage/>} />
           </Routes>
         </div>
       </BrowserRouter>

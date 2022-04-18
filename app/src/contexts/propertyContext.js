@@ -18,21 +18,17 @@ export const PropertyProvider = ({ children }) => {
     fetchProperties();
   }, []);
 
-  const fetchProperties = () => {
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch("http://localhost:8000/api/propiedades", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        setProperties(result.data);
-        listCity(result.data);
-      })
-      .catch((error) => console.log("error", error))
-      .finally(setIsLoading(false));
-  };
+  const fetchProperties = async ()=>{
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      const response = await fetch("http://localhost:8000/api/propiedades", requestOptions)
+      const data = await response.json()
+      setProperties(data.data)
+  }
+  
 
   const listCity = (array) => {
     setIsLoading(true);
@@ -94,6 +90,7 @@ ciudad ?
     setFilterProperties(filterCiudad):setFilterProperties(filter)
   };
 
+  
   const updateProperty = () => {};
   const deleteProperty = () => {};
 
