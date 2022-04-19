@@ -5,8 +5,7 @@ const validateReservation = [
     check('idUser').exists().notEmpty(),
     check('idPost').exists().notEmpty(),
     check('startDate').exists().notEmpty(),
-    check('endDate').exists().notEmpty(),    
-    check('payment').exists(),    
+    check('endDate').exists().notEmpty(),       
     (req, res, next)=>{
         validateResult(req, res, next);
     }   

@@ -1,7 +1,8 @@
-const { matchedData } = require("express-validator");
+const { matchedData, check } = require("express-validator");
 const { reservationModel, usersModel, postsModel } = require("../models");
 const { handleEmail } = require("../utils/handleEmail");
 const { handleErrorResponse, handleHttpError } = require("../utils/handleError");
+const mongoose = require("mongoose");
 
 
 // // Get = /api/reserva - Devuelve todas las reservas
@@ -50,6 +51,7 @@ const createReservationController = async (req, res) => {
         const body = matchedData(req);
         
         const checkUser = await usersModel.findOne({ _id: body.idUser });
+       
         if (!checkUser) {
           handleErrorResponse(res, "USER_NOT_FOUND", 401);
           return;
@@ -60,16 +62,45 @@ const createReservationController = async (req, res) => {
           return;
         }
         
+        const checkPostUser = await usersModel.findOne({ id: checkPost.idUsuario });
+        
+        if (!checkPostUser) {
+          handleErrorResponse(res, "POST_USER_NOT_FOUND", 401);
+          return;
+        }        
+        
         const data = await reservationModel.create(body);
 
+        console.log({idReserva: data._id,
+          nombreUser: checkUser.nombre,
+          telefonoUser: checkUser.telefono,
+          correoUser: checkUser.correo,
+          nombrePost: checkPostUser.nombre,
+          telefonoPost: checkPostUser.telefono,
+          correoPost: checkPostUser.correo,
+          idPost: checkPost._id,
+          tituloPost: checkPost.titulo,
+          pais: checkPost.ubicacion.pais,
+          ciudad: checkPost.ubicacion.ciudad,
+          direccion: checkPost.ubicacion.direccion,
+          startDate: body.startDate,
+          endDate: body.endDate})
         if (data) {
           handleEmail({
             idReserva: data._id,
-            nombre: checkUser.nombre,
-            telefono: checkUser.telefono,
-            correo: checkUser.correo,
+            nombreUser: checkUser.nombre,
+            telefonoUser: checkUser.telefono,
+            correoUser: checkUser.correo,
+            nombrePost: checkPostUser.nombre,
+            telefonoPost: checkPostUser.telefono,
+            correoPost: checkPostUser.correo,
             idPost: checkPost._id,
-            tituloPost: checkPost.titulo,            
+            tituloPost: checkPost.titulo,
+            pais: checkPost.ubicacion.pais,
+            ciudad: checkPost.ubicacion.ciudad,
+            direccion: checkPost.ubicacion.direccion,
+            startDate: body.startDate,
+            endDate: body.endDate            
           }, "reserva");
         }
         res.send({ data });
