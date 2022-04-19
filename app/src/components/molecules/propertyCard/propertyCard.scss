@@ -10,6 +10,7 @@
   background-position: center;
   background-size: cover;
   margin: 1rem;
+  transition: all 400ms ease;
  .ciudad{
   font-family: 'Philosopher', sans-serif;
  }
@@ -19,7 +20,8 @@
   font-size: 20px
  }
   &:hover{
-    transform: scale(1.01);
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-3%);
   }
 }
 .cardFooter {

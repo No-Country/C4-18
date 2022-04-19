@@ -24,7 +24,7 @@ export const PropertiesDisplay = (props) => {
       <div className="propertiesCardShow">
         {seleccion.length ? (
           seleccion.map((data) => (
-            <NavLink to={`/producto/${data._id}`}>
+            <NavLink to={`/producto/${data._id}`}className="navLink">
             <PropertyCard
               key={data._id}
               id={data._id}

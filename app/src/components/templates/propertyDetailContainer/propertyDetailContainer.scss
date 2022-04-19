@@ -14,7 +14,7 @@
   grid-auto-flow: row;
   grid-template-areas:
     "imagenes detalles"
-    "servicios contacto";
+    "servicios mapa";
   max-width: 1400px;
 }
 
@@ -44,11 +44,12 @@
 }
 
 .mapa {
-  grid-area: contacto;
+  grid-area: mapa;
   border-radius: 15px;
   border: black solid 1px;
   height: 100%;
   max-height: 550px;
+  overflow: hidden;
 }
 
 .detalles {
@@ -75,6 +76,6 @@
       "imagenes"
       "detalles"
       "servicios"
-      "contacto";
+      "mapa";
   }
 }
