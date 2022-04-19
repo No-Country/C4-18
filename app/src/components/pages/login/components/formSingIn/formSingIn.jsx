@@ -3,26 +3,35 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { Formik } from 'formik';
 import google from '../../assets/googleBtn-Desktop.svg';
+import { useUser } from '../../../../../contexts/userContext';
+
 
 function FormSingIn() {
+
+	const {signInUser} = useUser();
+
+	const handleSignIn = async (values)=>{
+		signInUser(values)
+	}
+
 	return (
 		<div className="container-formSingIn">
 			<div className='containerForm'>
 				<h1>Ingresa a tu cuenta</h1>
 				<Formik
-					initialValues={{ email: '', password: '' }}
+					initialValues={{ correo: '', password: '' }}
 					validate={values => {
 						const errors = {};
-						if (!values.email) {
-							errors.email = 'Required';
-						} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-							errors.email = 'Invalid email address';
+						if (!values.correo) {
+							errors.correo = 'Required';
+						} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.correo)) {
+							errors.correo = 'Invalid email address';
 						}
 						return errors;
 					}}
 					onSubmit={(values, { setSubmitting }) => {
 						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
+							handleSignIn(values)
 							setSubmitting(false);
 						}, 400);
 					}}
@@ -40,14 +49,14 @@ function FormSingIn() {
 						<form onSubmit={handleSubmit} className="formuFeatures">
 							<label>Usuario o Correo</label>
 							<input
-								type="email"
-								name="email"
+								type="correo"
+								name="correo"
 								onChange={handleChange}
 								onBlur={handleBlur}
-								value={values.email}
+								value={values.correo}
 								placeholder="Correo@ejemplo.com"
 							/>
-							{errors.email && touched.email && errors.email}
+							{errors.correo && touched.correo && errors.correo}
 							<label>Contraseña</label>
 							<input
 								type="password"

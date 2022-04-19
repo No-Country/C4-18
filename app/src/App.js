@@ -6,22 +6,25 @@ import SignUp from "./components/pages/login/singUp/singUp";
 import { PropertyProvider } from "./contexts/propertyContext";
 import { SearchPage } from "./components/pages/searchPage/searchPage";
 import { DetailPage } from "./components/pages/detailPage/detailPage";
+import {UserProvider} from "./contexts/userContext";
 
 function App() {
   return (
-    <PropertyProvider>
-      <BrowserRouter>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="login" element={<SingIn />} />
-            <Route path="/login/register" element={<SignUp />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/producto/:Id" element={<DetailPage/>} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </PropertyProvider>
+    <UserProvider>
+      <PropertyProvider>
+        <BrowserRouter>
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="login" element={<SingIn />} />
+              <Route path="/login/register" element={<SignUp />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/producto/:Id" element={<DetailPage/>} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </PropertyProvider>
+    </UserProvider>
   );
 }
 
