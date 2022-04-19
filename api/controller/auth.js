@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 
 const loginController = async (req, res) => {
     try {
+      console.log(req.body)
       const body = matchedData(req);
       const user = await usersModel.findOne({ correo: body.correo });
       if (!user) {
@@ -42,7 +43,12 @@ const loginController = async (req, res) => {
       }
       const password = await encrypt(body.password);
       const bodyInsert = { ...body, password };
-      const data = await usersModel.create(bodyInsert);
+      const user = await usersModel.create(bodyInsert);
+      const data = {
+        token: await tokenSign(user),
+        user: user,
+      };
+  
       res.send({ data });
     } catch (e) {
       handleHttpError(res, e);
