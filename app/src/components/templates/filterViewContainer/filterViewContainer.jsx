@@ -1,10 +1,10 @@
-import "./FilterViewContainer.scss";
+import "./filterViewContainer.scss";
 
 import { useEffect, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useProperty } from "../../../contexts/propertyContext";
-import { PropertiesDisplay } from "../../organisms/PropertiesDisplay/PropertiesDisplay";
+import { PropertiesDisplay } from "../../organisms/propertiesDisplay/propertiesDisplay";
 
 export const FilterViewContainer = () => {
   

@@ -3,22 +3,35 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { Formik } from 'formik';
 import google from '../../assets/googleBtn-Desktop.svg';
+import { useUser } from '../../../../../contexts/userContext';
 
 function FormSingUp() {
+
+	const {signUpUser}= useUser()
+
+	const handleSignUp = (values)=> {
+		signUpUser({
+			nombre: values.name,
+			correo: values.correo,
+			telefono: parseInt(values.number),
+			password: values.password
+		})
+	}
+
 	return (
 		<div className="container-formSingUp">
 			<div className='containerForm'>
 				<h1>Crear una Cuenta</h1>
 				<Formik
-					initialValues={{ email: '', password: '' }}
+					initialValues={{ correo: '', password: '' }}
 					validate={values => {
 						const errors = {};
-						if (!values.email || !values.name || !values.number) {
-							errors.email = 'Ingrese un correo válido';
+						if (!values.correo || !values.name || !values.number) {
+							errors.correo = 'Ingrese un correo válido';
 							errors.name = 'Nombre requerido';
 							errors.number = 'Teléfono requerido';
-						} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-							errors.email = 'Correo Inválido';
+						} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.correo)) {
+							errors.correo = 'Correo Inválido';
 						} /* else if (!/^[A-Z]+\.[A-Z]{2,}$/i.test(values.name)) {
 							errors.name = 'Solo debe contener letras';
 						} else if (!/^[0-9]+\.[A-Z]{2,}$/i.test(values.number)) {
@@ -27,10 +40,8 @@ function FormSingUp() {
 						return errors;
 					}}
 					onSubmit={(values, { setSubmitting }) => {
-						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
-							setSubmitting(false);
-						}, 400);
+						handleSignUp(values);
+						setSubmitting(false)
 					}}
 				>
 					{({
@@ -56,14 +67,14 @@ function FormSingUp() {
 							{errors.name && touched.name && errors.name}
 							<label>Correo</label>
 							<input
-								type="email"
-								name="email"
+								type="correo"
+								name="correo"
 								onChange={handleChange}
 								onBlur={handleBlur}
-								value={values.email}
+								value={values.correo}
 								placeholder="Correo@ejemplo.com"
 							/>
-							{errors.email && touched.email && errors.email}
+							{errors.correo && touched.correo && errors.correo}
 							<label>Número telefónico</label>
 							<input
 								type="text"

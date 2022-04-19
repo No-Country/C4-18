@@ -4,7 +4,7 @@ import FormSingUp from '../components/formSingUp/formSingUp';
 
 function SingIn() {
   return (
-    <div className="conatiner-singUp">   
+    <div className="container-singUp">   
         <Header />
         <div className='background-img'>
           <FormSingUp />
