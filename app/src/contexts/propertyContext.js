@@ -16,7 +16,13 @@ export const PropertyProvider = ({ children }) => {
 
   useEffect(() => {
     fetchProperties();
+    
   }, []);
+
+useEffect(()=>{
+  listCity(properties);
+},[properties])
+
 
   const fetchProperties = async ()=>{
       var requestOptions = {

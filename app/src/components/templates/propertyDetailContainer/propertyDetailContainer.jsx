@@ -7,6 +7,10 @@ export const PropertyDetailContainer = (props) => {
   const property = props.property;
   
 
+
+const map = "https://maps.google.com/maps?q={lat},%20-0.141797&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+
   return (
     <>
         <div className="container">
@@ -22,9 +26,11 @@ export const PropertyDetailContainer = (props) => {
             <DetalleServicios property={property} />
           </div>
           <div className="mapa">
-           
-            <br />
-            <h2>Aca va el mapa</h2>
+          
+              <iframe width="100%" height="100%"  id="gmap_canvas" src={map} scrolling="no" ></iframe>
+              
+            
+          
           </div>
           </div>
       ) : (

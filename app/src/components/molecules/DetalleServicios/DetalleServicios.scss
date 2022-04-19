@@ -1,8 +1,13 @@
 .descripcion {
   margin-left: 0.5rem;
   p {
+    min-height: 150px;
     margin: 0px 10px;
+    letter-spacing: 1px;
     text-align: justify;
+    word-spacing: 3px;
+    line-height: 1.5rem;
+  
   }
 }
 
