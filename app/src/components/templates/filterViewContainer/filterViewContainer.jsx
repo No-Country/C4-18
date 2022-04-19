@@ -9,12 +9,13 @@ import { PropertiesDisplay } from "../../organisms/propertiesDisplay/propertiesD
 export const FilterViewContainer = () => {
   const {
     properties,
-    fetchProperties,
     cityList,
     countryList,
-    filterProperties,
-    getByFilter,
   } = useProperty();
+
+  
+
+
 
   const [propiedades, setPropiedades] = useState([]);
   const [filtroPais, setFiltroPais] = useState(" ");

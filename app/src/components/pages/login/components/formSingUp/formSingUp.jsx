@@ -1,13 +1,15 @@
 import './formSingUp.scss';
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik } from 'formik';
 import google from '../../assets/googleBtn-Desktop.svg';
 import { useUser } from '../../../../../contexts/userContext';
+import { useNavigate } from 'react-router-dom';
 
 function FormSingUp() {
 
-	const {signUpUser}= useUser()
+	const {signUpUser, userSession}= useUser()
+	const history = useNavigate()
 
 	const handleSignUp = (values)=> {
 		signUpUser({
@@ -16,7 +18,10 @@ function FormSingUp() {
 			telefono: parseInt(values.number),
 			password: values.password
 		})
+		history("/")
 	}
+
+
 
 	return (
 		<div className="container-formSingUp">

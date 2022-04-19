@@ -1,5 +1,5 @@
 import './formSingIn.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { Formik } from 'formik';
 import google from '../../assets/googleBtn-Desktop.svg';
@@ -9,9 +9,12 @@ import { useUser } from '../../../../../contexts/userContext';
 function FormSingIn() {
 
 	const {signInUser} = useUser();
+	const history = useNavigate()
 
 	const handleSignIn = async (values)=>{
 		signInUser(values)
+
+		history("/")
 	}
 
 	return (

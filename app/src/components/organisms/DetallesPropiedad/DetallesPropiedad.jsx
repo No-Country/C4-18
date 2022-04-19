@@ -1,8 +1,18 @@
 import "./DetallesPropiedad.scss";
 import { shareButton, likeButton } from "../../atoms/atomsIndex";
 import { useState, useEffect } from "react";
+import { useUser } from "../../../contexts/userContext";
+
 export const DetallesPropiedad = (props) => {
+  
+  const {
+    userSession
+  } = useUser();
+
+useEffect(()=>{  console.log(userSession)},[userSession])
+  
   const property = props.property;
+
 
   const date = new Date();
 
@@ -28,7 +38,7 @@ export const DetallesPropiedad = (props) => {
   dateFormat(date);
 
   const [consulta, setConsulta] = useState({
-    idUser: "6256506c67592c6432786410",
+    idUser: userSession.userId,
     idPost: property._id,
     startDate: "",
     endDate: "",
@@ -56,7 +66,7 @@ export const DetallesPropiedad = (props) => {
         body: JSON.stringify(consulta),
         headers: {
             'Content-Type': 'application/json',
-            "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2NTA2YzY3NTkyYzY0MzI3ODY0MTAiLCJpYXQiOjE2NTA0MDQ0NTksImV4cCI6MTY1MDQxMTY1OX0.JhepuHQpEWEuBQUTrD2f3c3NHYV37blD2Cl4ltZ48_I"               
+            "Authorization":userSession.token               
         },
     }).then(res => res.json()).then(res => res.data).finally(console.log("Consulta Enviada"))
     
