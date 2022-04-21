@@ -9,6 +9,8 @@ import { DetailPage } from "./components/pages/detailPage/detailPage";
 import { UserProvider } from "./contexts/userContext";
 import { UserProfilePage } from "./components/pages/userProfilePage/userProfilePage";
 
+
+
 function App() {
   return (
     <UserProvider>

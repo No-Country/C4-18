@@ -2,15 +2,12 @@ import "./DetallesPropiedad.scss";
 import { shareButton, likeButton } from "../../atoms/atomsIndex";
 import { useState, useEffect } from "react";
 import { useUser } from "../../../contexts/userContext";
+import { Toast, Swal } from "../../atoms/atomsIndex";
 
 export const DetallesPropiedad = (props) => {
-  
-  const {
-    userSession
-  } = useUser();
+  const { userSession } = useUser();
 
   const property = props.property;
-
 
   const date = new Date();
 
@@ -59,17 +56,23 @@ export const DetallesPropiedad = (props) => {
   const enviarConsulta = (event) => {
     event.preventDefault();
 
-    setConsulta({ ...consulta, idPost: property._id ,  idUser: userSession.userId,})
+    setConsulta({
+      ...consulta,
+      idPost: property._id,
+      idUser: userSession.userId,
+    });
 
-      fetch("http://localhost:8000/api/reservas", {
-        method: "POST",
-        body: JSON.stringify(consulta),
-        headers: {
-            'Content-Type': 'application/json',
-            "Authorization":userSession.token               
-        },
-    }).then(res => res.json()).then(res => res.data).finally(console.log("Consulta Enviada"))
-    
+    fetch("http://localhost:8000/api/reservas", {
+      method: "POST",
+      body: JSON.stringify(consulta),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: userSession.token,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => res.data)
+      .finally(console.log("Consulta Enviada"));
   };
 
   return (
@@ -117,10 +120,33 @@ export const DetallesPropiedad = (props) => {
           <p>Precio por noche: </p>
           <h3>$ {property.precio}</h3>
         </div>
-        <button type="submit" className="botonConsultar">
-          {" "}
-          Consultar{" "}
-        </button>
+
+        {userSession ? (
+          <button
+            type="submit"
+            className="botonConsultar"
+            onClick={() => {
+              Toast.fire({
+                icon: "success",
+                title: "Consulta enviada correctamente",
+              });
+            }}
+          >
+            Consultar{" "}
+          </button>
+        ) : (
+          <button
+            className="botonConsultar"
+            onClick={() => {
+              Swal.fire({
+                icon: "error",
+                title: "Inicie sesion para realizar una consulta",
+              });
+            }}
+          >
+            Consultar
+          </button>
+        )}
       </form>
     </>
   );

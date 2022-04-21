@@ -15,8 +15,23 @@ import shareButton from "./icon-share.svg";
 import likeButton from "./icon-like.svg";
 import logOut from "./log-out.svg";
 import logOutDark from "./log-out-dark.svg";
+import Swal from 'sweetalert2'
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
 
 export {
+  Swal,
+  Toast,
   iconDucha,
   iconDuchaDark,
   iconEstacionamiento,

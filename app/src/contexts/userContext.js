@@ -1,6 +1,7 @@
-
 import { useContext, createContext, useState, useEffect } from "react";
 import Swal from 'sweetalert2'
+import { Toast } from "../components/atoms/atomsIndex";
+
 
 
 export const UserContext = createContext();
@@ -8,6 +9,7 @@ export const UserContext = createContext();
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({children})=>{
+
 
     const [userSession, setUserSession] = useState(null)
 
@@ -40,6 +42,11 @@ export const UserProvider = ({children})=>{
                     'Content-Type': 'application/json'                    
                 },
             }).then(res => res.json()).then(res => res.data)
+            .then(
+              Toast.fire({
+                icon: 'success',
+                title: 'Inicio de sesion exitoso'
+              }))
 
             
             setUserStorage({
@@ -60,7 +67,11 @@ export const UserProvider = ({children})=>{
                 headers: {
                     'Content-Type': 'application/json',                    
                 },
-            }).then(res => res.json()).then(res => res.data)
+            }).then(res => res.json()).then(res => res.data).then(
+                Toast.fire({
+                  icon: 'success',
+                  title: 'Registro realizado correctamente'
+                }))
 
             
             setUserStorage({     
@@ -121,7 +132,7 @@ export const UserProvider = ({children})=>{
         try {  
            
             Swal.fire({
-                title: 'Do you want to logout?',                
+                title: 'Quieres cerrar la sesion?',                
                 showCancelButton: true,
                 confirmButtonText: 'Ok',                
               }).then((result) => {
