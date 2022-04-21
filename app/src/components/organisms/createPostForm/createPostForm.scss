@@ -158,3 +158,12 @@
 		}
 	}
 }
+.checkbox{
+	width: 100%;
+		display: flex;
+		align-items: center;
+	.check{
+		width: fit-content!important;
+		margin-left: 15px!important;
+	}
+}

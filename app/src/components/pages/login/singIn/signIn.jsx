@@ -1,6 +1,7 @@
 import './singIn.scss';
 import Header from '../components/header/header'
 import FormSingIn from '../components/formSingIn/formSingIn';
+import { Footer } from "../../../organisms/footer/footer"
 
 function SingIn() {
   return (
@@ -9,7 +10,7 @@ function SingIn() {
         <div className='background-img'>
           <FormSingIn />
         </div>
-    
+    <Footer/>
     </div>
   );
 }

@@ -25,7 +25,7 @@ export const DetalleServicios = (props) => {
             <img src={iconCamasDark} alt="" /> <span>Hasta {servicios.capacidad} huespedes</span>
           </div>
           <div className="item-2">
-            <img src={iconDuchaDark} alt="" /> <span>Cuenta con {servicios.baños} baños </span>
+            <img src={iconDuchaDark} alt="" /> <span>Cuenta con {servicios.ducha} baños </span>
           </div>
          {servicios.estacionamiento  ? <div className="item-3">
             <img src={iconEstacionamientoDark} alt="" />{" "}
