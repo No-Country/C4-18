@@ -1,0 +1,39 @@
+.inputUserContainer{
+    width: 100%;  
+
+    input:focus{
+        outline: 0 none;
+        font-weight: 500;
+        font-style: italic;        
+    }
+      
+    .inputWrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        .inputUser{
+            border: none;            
+        }
+        .inputUser:disabled{
+            background-color: #ffffff;
+        }
+        .inputButton{
+            display: block;
+            background-color: transparent;
+            opacity: 0;            
+            border: none;
+            width: 20px;
+            img{
+                width: 22px;                
+            }            
+        }
+        
+        
+    }    
+    
+}
+.inputUserContainer:hover .inputButton{
+    opacity: 1;   
+}
+

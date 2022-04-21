@@ -12,7 +12,7 @@ const UserScheme = new mongoose.Schema(
             type: String
         },
         fechaDeNacimiento: {
-            type: Number
+            type: Date
         },
         correo: {
             type: String,
@@ -40,7 +40,13 @@ const UserScheme = new mongoose.Schema(
         rol: {
             type: String,
             default: "user"
-        }
+        },
+        direccion: {
+            type: String
+        },
+        dni: {
+            type: String
+        }        
 
     },
     {
