@@ -3,6 +3,7 @@ import { useEffect, useState} from "react"
 import { Header } from "../../organisms/header/header"
 import { PropertyDetailContainer } from "../../templates/propertyDetailContainer/propertyDetailContainer"
 import { useParams } from "react-router-dom"
+import { Footer } from "../../organisms/footer/footer"
 
 export const DetailPage =()=>{
 const [propertyById, setPropertyById] = useState([])
@@ -30,7 +31,7 @@ const {Id} = useParams()
     <>
     <Header/>
     {propertyById.lenght!==0 ?<PropertyDetailContainer property={propertyById[0]}/> : <></> }
-    
+    <Footer/>
     </>
   )
 } 

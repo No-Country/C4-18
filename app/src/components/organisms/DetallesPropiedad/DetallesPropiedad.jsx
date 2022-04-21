@@ -9,8 +9,6 @@ export const DetallesPropiedad = (props) => {
     userSession
   } = useUser();
 
-useEffect(()=>{  console.log(userSession)},[userSession])
-  
   const property = props.property;
 
 
@@ -38,8 +36,8 @@ useEffect(()=>{  console.log(userSession)},[userSession])
   dateFormat(date);
 
   const [consulta, setConsulta] = useState({
-    idUser: userSession.userId,
-    idPost: property._id,
+    idUser: "",
+    idPost: "",
     startDate: "",
     endDate: "",
     payment: {},
@@ -60,6 +58,8 @@ useEffect(()=>{  console.log(userSession)},[userSession])
 
   const enviarConsulta = (event) => {
     event.preventDefault();
+
+    setConsulta({ ...consulta, idPost: property._id ,  idUser: userSession.userId,})
 
       fetch("http://localhost:8000/api/reservas", {
         method: "POST",
@@ -89,9 +89,9 @@ useEffect(()=>{  console.log(userSession)},[userSession])
           </p>
           <p>{property.ubicacion.direccion}</p>
         </div>
-        <div className="detalleCapacidad">
+        {/* <div className="detalleCapacidad">
           <p>Consulta para XX cantidad de personas</p>
-        </div>
+        </div> */}
 
         <div className="detalleDisponibilidad">
           <input

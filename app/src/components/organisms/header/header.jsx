@@ -1,14 +1,58 @@
-import { logoHeader } from '../../atoms/atomsIndex';
-import './header.scss';
+import { useEffect, useState } from "react";
+import { useUser } from "../../../contexts/userContext";
+import { logoHeader, logOut } from "../../atoms/atomsIndex";
+import { NavLink } from "react-router-dom";
 
+import "./header.scss";
 
+export const Header = () => {
+  const { userSession } = useUser();
+  const [avatarUser, setAvatarUser] = useState({});
 
-export const Header=()=> {
+  useEffect(() => {
+    setAvatarUser(userSession);
+  }, [userSession]);
+
   return (
-    <div className="headerContainer">   
-        <div className='header'> 
-           <a href="/"><img src={logoHeader} alt='logoHeader'/></a> 
-        </div>       
+    <div className="headerContainer">
+      <div className="user">
+        <div className="avatarUser">
+          {avatarUser ? (
+            <NavLink to={`/profile`}>
+              <img
+                src={avatarUser.avatar}
+                alt="User profile"
+                className="imgAvatar"
+              />
+            </NavLink>
+          ) : (
+            <></>
+          )}
+          <div className="header">
+            <a href="/">
+              <img src={logoHeader} alt="logoHeader" />
+            </a>
+          </div>
+          {userSession ? (
+            <img
+              src={logOut}
+              alt="Log Out"
+              className="logOut"
+              onClick={() => {
+                console.log("click");
+              }}
+            />
+          ) : (
+            <>
+              <NavLink to="/login" className="logIn">
+                <h3 >
+                  Iniciar Sesion
+                  </h3>
+              </NavLink>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
-}
+};

@@ -1,5 +1,9 @@
 .formularioConsulta{
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
 }
 
 .detalleTitulo {
@@ -8,6 +12,7 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
+  
  
   .iconos {
     display: flex;
@@ -22,6 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  
  
 }
 .detalleCapacidad {

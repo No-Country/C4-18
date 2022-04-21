@@ -13,7 +13,7 @@ export const UserProvider = ({children})=>{
     useEffect(() => {        
         if(sessionStorage.getItem("user")) {
             getUserStorage()
-            console.log("Usuario racargado")
+            console.log("Usuario recargado")
         }else{
             console.log("No hay ningun usuario")
         }

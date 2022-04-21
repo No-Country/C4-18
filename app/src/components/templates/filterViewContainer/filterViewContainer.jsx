@@ -13,10 +13,6 @@ export const FilterViewContainer = () => {
     countryList,
   } = useProperty();
 
-  
-
-
-
   const [propiedades, setPropiedades] = useState([]);
   const [filtroPais, setFiltroPais] = useState(" ");
   const [filtroCiudad, setFiltroCiudad] = useState(" ");
@@ -40,10 +36,6 @@ export const FilterViewContainer = () => {
   useEffect(() => {
     getProperties();
   }, []);
-
-  useEffect(() => {
-    console.log(propiedades);
-  }, [propiedades]);
 
   const funcionFiltro = (array, pais, ciudad, capacidad) => {
     let filter = [];

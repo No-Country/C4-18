@@ -1,18 +1,47 @@
 .headerContainer {
-    width: 100%;
-    height: 10vh;
+  width: 100%;
+  height: 7vh;
+  background-color: #3e3e3e;
+  display: flex;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  height: 7vh;
+  margin: auto;
+}
 
-    .header {
-        display: flex;
-        background-color: #3E3E3E;
-        padding: 0.5rem;
-        justify-content: center;
-        align-items: center;
-        height: 10vh;
-        .img {
-            width: 70px;
-            height: 60px;
-            max-height: 10vh;
-        }
+.user {
+  display: flex;
+  justify-self: flex-end;
+  position: absolute;
+  width: 100vw;
+  padding: 0px 15px;
+  .avatarUser {
+    display: flex;
+    justify-self: center;
+    height: 7vh;
+    align-items: center;
+    width: 100vw;
+    justify-content: space-between;
+
+    .imgAvatar {
+      width: 70px;
+      height: 70px;
+      max-height: 10vh;
+      border: white 2px solid;
+      border-radius: 101px;
     }
+  }
+  .logOut {
+    height: 35px;
+    margin-right: 15px;
+
+  }
+  .logIn{
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+  }
 }

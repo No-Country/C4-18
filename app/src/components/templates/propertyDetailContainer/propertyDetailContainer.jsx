@@ -5,38 +5,35 @@ import "./propertyDetailContainer.scss";
 
 export const PropertyDetailContainer = (props) => {
   const property = props.property;
-  
 
-
-const map = "https://maps.google.com/maps?q={lat},%20-0.141797&t=&z=13&ie=UTF8&iwloc=&output=embed"
-
+  const map =
+    "https://www.google.com/maps/embed/v1/place?q=51.506222,+-0.162422&key=AIzaSyAuVvdNHxezUbVXmzihOPZzfFWxZ8Ewpjo";
 
   return (
     <>
-        <div className="container">
-      {property ? (
-        <div className="grid">
-          <div className="imagenes">
-            <ImagesSlides imagenes={property.imagenes}/>
+      <div className="container">
+        {property ? (
+          <div className="grid">
+            <div className="imagenes">
+              <ImagesSlides imagenes={property.imagenes} />
+            </div>
+            <div className="detalles">
+              <DetallesPropiedad property={property} />
+            </div>
+            <div className="servicios">
+              <DetalleServicios property={property} />
+            </div>
+            <div className="mapa">
+              <iframe
+             
+                src={map}
+              ></iframe>
+            </div>
           </div>
-          <div className="detalles">
-            <DetallesPropiedad property={property} />
-          </div>
-          <div className="servicios">
-            <DetalleServicios property={property} />
-          </div>
-          <div className="mapa">
-          
-              <iframe width="100%" height="100%"  id="gmap_canvas" src={map} scrolling="no" ></iframe>
-              
-            
-          
-          </div>
-          </div>
-      ) : (
-        <></>
+        ) : (
+          <></>
         )}
-        </div>
+      </div>
     </>
   );
 };

@@ -17,11 +17,15 @@
       height: 3px;
       border-bottom: #f00707 3px solid;
       width: 325px;
+      max-width: 30%;
+
     }
     .lineGrey {
       height: 1px;
       margin-bottom: 50px;
       border-top: #e0e6e8 1px solid;
       width: 800px;
+      max-width: 80%;
+
     }
 }

@@ -17,8 +17,8 @@ const {properties} = useProperty()
       ) : (
         <></>
       )}
-<NavLink to={`/search`}>
-      <button>Ver Mas</button>
+<NavLink to={`/search`} className="verMasNav">
+      <button className="verMas">Ver Mas</button>
 </NavLink>
 </div>
 

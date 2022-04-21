@@ -14,7 +14,6 @@ return(
 <MainViewContainer />
 <CiudadesViewContainer/>
 <PropertiesViewContainer/>
-<OpinionViewContainer/>
 <Footer/>
 </div>
 

@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,41 +29,54 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  border: 0.5px solid #c7c7c7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .servicios {
   grid-area: servicios;
   border-radius: 15px;
-  border: black solid 1px;
   height: 100%;
   max-height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: stretch
+  align-items: stretch;
+  border: 0.5px solid #c7c7c7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .mapa {
   grid-area: mapa;
   border-radius: 15px;
-  border: black solid 1px;
   height: 100%;
   max-height: 550px;
   overflow: hidden;
+  border: 0.5px solid #c7c7c7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .detalles {
   grid-area: detalles;
   border-radius: 15px;
-  border: #a0a0a0 solid 1px;
   height: 100%;
   max-height: 550px;
-  font-family:Roboto sans-serif;
+  font-family: Roboto sans-serif;
   color: #303030;
   padding-left: 10px;
   padding-right: 5px;
   display: flex;
   flex-direction: column;
+  border: 0.5px solid #c7c7c7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 1023px) {

@@ -9,9 +9,9 @@ export const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-menu">
-        <div>
+
           <img src={logoFooter} alt="Footer Home" className="logoFooter" />
-        </div>
+
 
         <div className="container-top-footer">
           <h4>Sobre Nosotros</h4>
@@ -44,31 +44,8 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="container-top-footer container-top-footer-promotion">
-          <h4>Promociones</h4>
-          <ul>
-            <li className="center-object">
-              <a>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-                ratione iusto dicta eveniet veniam maiores excepturi quidem?
-                Assumenda
-              </a>
-            </li>
-            <li>
-              <form className="form">
-                <input type="text" className="input" placeHolder="correo" />
-                <button type="submit" className="submit">
-                  enviar
-                </button>
-              </form>
-            </li>
-            <li className="center-object">
-              <a>Contactanos</a>
-            </li>
-          </ul>
-        </div>
-      </div>{" "}
-      {/* fin de footer-menu */}
+        
+      </div>
       <hr />
       <div className="footer-social-media">
         <h4>Todos los derechos reservados por NC - G18</h4>
@@ -83,8 +60,7 @@ export const Footer = () => {
           <img src={iconoEmail} alt="Home" className="iconoEmail" />
         </div>
         <h4>Politica y privacidad</h4>
-      </div>{" "}
-      {/* footer-social-networking */}
+      </div>
     </div>
   );
 };

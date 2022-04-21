@@ -1,31 +1,28 @@
-import { useEffect, useState } from "react"
-import "./PictureSlider.scss"
+import { useEffect, useState } from "react";
+import "./PictureSlider.scss";
 
+export const PictureSlider = (props) => {
+  const [imagenes, setImagenes] = useState([]);
 
-export const PictureSlider =(props)=>{
+  let arraySlider = [];
 
-    const [imagenes, setImagenes] = useState([])
+  const arrayImagenes = (array) => {
+    for (let index = 1; index < array.length; index++) {
+      arraySlider = [...arraySlider, { imagen: array[index], id: index }];
+    }
+  };
+  useEffect(() => {
+    arrayImagenes(props.imagenes);
+    setImagenes(arraySlider);
+  }, []);
 
-useEffect(()=>{
-    
-    setImagenes([props.imagenes[1],props.imagenes[2],props.imagenes[3]])
-},[props])
-
-    return (
-        <div className="slider">
-            {imagenes.map((data)=>
-              
-                    (<div className="sliderImg">
-                    <img src={data} alt="foto 1" />
-                    </div>)
-           
-                    )
-                    }
-
-            
-
-
-
+  return (
+    <div className="slider">
+      {imagenes.map((data) => (
+        <div key={data.id} className="sliderImg">
+          <img src={data.imagen} alt="foto 1" />
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};

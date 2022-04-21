@@ -1,4 +1,32 @@
 .signIn{
     text-decoration: none;
-    width: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    background-color: #303030;
+    height: 100%;
+    &:hover{
+        background-color: #6a6a6a;
+       
+    }
 }
+
+
+.userMain{
+    display: flex;
+    flex-direction: row;
+    
+    .imgAvatar {
+        width: 70px;
+        height: 70px;
+        max-height: 10vh;
+        border: white 2px solid;
+        border-radius: 101px;
+      }
+
+      .logOut{
+            width: 25%;
+margin-left: 15px
+      }
+  }
