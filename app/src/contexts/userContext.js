@@ -20,15 +20,13 @@ export const UserProvider = ({children})=>{
     }, [])    
 
     const setUserStorage = (user)=>{
-
         if (user) {
             sessionStorage.setItem("user", JSON.stringify(user))
             setUserSession(user)
         }        
     }
     const getUserStorage = () => {
-        setUserSession(JSON.parse(sessionStorage.getItem("user")))
-        
+        setUserSession(JSON.parse(sessionStorage.getItem("user")))        
     }
 
     const signInUser = async (values)=>{
@@ -42,14 +40,10 @@ export const UserProvider = ({children})=>{
                 },
             }).then(res => res.json()).then(res => res.data)
 
+            
             setUserStorage({
                 token: response.token,
-                nombre: response.user.nombre,
-                userId: response.user._id,
-                correo: response.user.correo,
-                rol: response.user.rol,
-                avatar: response.user.avatar[0],
-                telefono: response.user.telefono
+                ...response.user
             })  
 
         } catch (error) {
@@ -63,18 +57,14 @@ export const UserProvider = ({children})=>{
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: {
-                    'Content-Type': 'application/json'                    
+                    'Content-Type': 'application/json',                    
                 },
             }).then(res => res.json()).then(res => res.data)
 
+            
             setUserStorage({     
                 token: response.token,
-                nombre: response.user.nombre,
-                userId: response.user._id,
-                correo: response.user.correo,
-                rol: response.user.rol,
-                avatar: response.user.avatar[0],
-                telefono: response.user.telefono
+                ...response.user
             })
             
             
@@ -82,8 +72,48 @@ export const UserProvider = ({children})=>{
             console.log("ERROR EN SIGNUP: ", error)      
         }
     }
-    const getUser = ()=>{}
-    const updateUser = ()=>{}
+
+    const getUser = async ()=>{
+        try {
+            const response = await fetch(`http://localhost:8000/api/usuario/_id/${userSession._id}`, {
+                method: "GET",                
+                headers: {
+                    'Content-Type': 'application/json',                    
+                },
+            }).then(res => res.json()).then(res => res.user)
+
+            console.log("RESPUESTA EN GET USER: ", response[0])
+            
+            setUserStorage({     
+                token: userSession.token,
+                ...response[0]
+            })
+            
+            
+        } catch (error) {
+            console.log("ERROR EN SIGNUP: ", error)      
+        }
+    }
+
+    const updateUser = async (values, img)=>{
+        console.log("UPDATEUSER", values)
+        try { 
+            const headers = !img ? {
+                'Content-Type': 'application/json',
+                'Authorization': userSession.token                    
+            } : {'Authorization': userSession.token}      
+        const response = await fetch(`http://localhost:8000/api/usuario/${userSession._id}`, {
+                method: "PUT",
+                body: !img ? JSON.stringify(values) : values,
+                headers: headers,
+            }).then(res => res.json()).then(res => res.data)
+        
+        console.log("Respuesta en updateUser: ", response)
+        getUser();
+    } catch (error) {
+        console.log("UPDATE ERROR: ", error)   
+    }
+    }
 
 
     return(
