@@ -150,7 +150,7 @@ export const UserProvider = ({children})=>{
                     setUserStorage(null)                   
                     document.location.href = '/'
                 } 
-              })
+            })
             
             
             

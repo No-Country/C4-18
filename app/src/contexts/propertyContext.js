@@ -1,4 +1,5 @@
 import { useContext, useState, createContext, useEffect } from "react";
+import { useUser } from "./userContext";
 
 export const PropertyContext = createContext([]);
 
@@ -7,6 +8,7 @@ export const useProperty = () => useContext(PropertyContext);
 
 // Custom Provider
 export const PropertyProvider = ({ children }) => {
+  const {userSession} = useUser()
   const [properties, setProperties] = useState([]);
   const [filterProperties, setFilterProperties] = useState([]);
   const [cityList, setCityList] = useState([]);
@@ -58,8 +60,7 @@ useEffect(()=>{
     setCountryList(newArrCountry);
   };
 
-  const addProperty = () => {};
-
+  
   const getByFilter = (
     array,
     pais,
@@ -96,8 +97,49 @@ ciudad ?
     setFilterProperties(filterCiudad):setFilterProperties(filter)
   };
 
+
+const addProperty = async (values) => {
+    try {
+      const response = await fetch("http://localhost:8000/api/propiedades", {
+          method: "POST",
+          body: JSON.stringify(values),
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': userSession.token                    
+          },
+      }).then(res => res.json()).then(res => res)
+
+      return response
+
+  } catch (error) {
+      console.log("ERROR EN SIGNIN: ", error)      
+  }
+  };
   
-  const updateProperty = () => {};
+  const updateProperty = async (values, img, id) => {
+    try {
+      const headers = !img
+        ? {
+            "Content-Type": "application/json",
+            Authorization: userSession.token,
+          }
+        : { Authorization: userSession.token };
+      const response = await fetch(
+        `http://localhost:8000/api/propiedades/${id}`,
+        {
+          method: "PUT",
+          body: !img ? JSON.stringify(values) : values,
+          headers: headers,
+        }
+      )
+        .then((res) => res.json())
+        .then((res) => res);
+      console.log("respuesta en property", response);
+      return response;
+    } catch (error) {
+      console.log("UPDATE ERROR: ", error);
+    }
+  };
   const deleteProperty = () => {};
 
   return (
