@@ -1,0 +1,21 @@
+.container-post {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.background-img {
+    display: flex;
+    align-items: center;
+    background: url('../../pages/login/assets/fondo.png');
+    background-size: cover;
+    background-position: center;       
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    height: fit-content;    
+    overflow-y:auto;
+}

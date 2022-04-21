@@ -59,7 +59,7 @@ function FormSingIn() {
 								value={values.correo}
 								placeholder="Correo@ejemplo.com"
 							/>
-							{errors.correo && touched.correo && errors.correo}
+							{errors.correo && touched.correo && <span className='error'>{errors.correo}</span>}
 							<label>Contraseña</label>
 							<input
 								type="password"
@@ -69,7 +69,7 @@ function FormSingIn() {
 								value={values.password}
 								placeholder="*********"
 							/>
-							{errors.password && touched.password && errors.password}
+							{errors.password && touched.password && <span className='error'>{errors.password}</span>}
 
 							<h6>Olvido la contraseña?</h6>
 

@@ -31,17 +31,10 @@ function FormSingUp() {
 					initialValues={{ correo: '', password: '' }}
 					validate={values => {
 						const errors = {};
-						if (!values.correo || !values.name || !values.number) {
-							errors.correo = 'Ingrese un correo válido';
-							errors.name = 'Nombre requerido';
-							errors.number = 'Teléfono requerido';
-						} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.correo)) {
-							errors.correo = 'Correo Inválido';
-						} /* else if (!/^[A-Z]+\.[A-Z]{2,}$/i.test(values.name)) {
-							errors.name = 'Solo debe contener letras';
-						} else if (!/^[0-9]+\.[A-Z]{2,}$/i.test(values.number)) {
-							errors.number = 'Solo debe contener números';
-						} */
+						if (!values.name) errors.name = 'Nombre requerido';
+						if (!values.number) errors.number = 'Teléfono requerido';
+						if (!values.correo || !values.name || !values.number) errors.correo = 'Ingrese un correo válido';					
+						if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.correo)) errors.correo = 'Correo Inválido';
 						return errors;
 					}}
 					onSubmit={(values, { setSubmitting }) => {
@@ -69,7 +62,7 @@ function FormSingUp() {
 								value={values.name}
 								placeholder="Nombre y Apellido"
 							/>
-							{errors.name && touched.name && errors.name}
+							{errors.name && touched.name && <span className='error'>{errors.name}</span>}
 							<label>Correo</label>
 							<input
 								type="correo"
@@ -79,7 +72,7 @@ function FormSingUp() {
 								value={values.correo}
 								placeholder="Correo@ejemplo.com"
 							/>
-							{errors.correo && touched.correo && errors.correo}
+							{errors.correo && touched.correo && <span className='error'>{errors.correo}</span>}
 							<label>Número telefónico</label>
 							<input
 								type="text"
@@ -89,7 +82,7 @@ function FormSingUp() {
 								value={values.number}
 								placeholder="Número telefónico"
 							/>
-							{errors.number && touched.number && errors.number}
+							{errors.number && touched.number && <span className='error'>{errors.number}</span>}
 							<label>Contraseña</label>
 							<input
 								type="password"
@@ -99,7 +92,7 @@ function FormSingUp() {
 								value={values.password}
 								placeholder="*********"
 							/>
-							{errors.password && touched.password && errors.password}
+							{errors.password && touched.password && <span className='error'>{errors.password}</span>}
 
 							{/* <h6>Olvido la contraseña?</h6> */}
 

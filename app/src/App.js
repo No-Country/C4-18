@@ -8,6 +8,7 @@ import { SearchPage } from "./components/pages/searchPage/searchPage";
 import { DetailPage } from "./components/pages/detailPage/detailPage";
 import { UserProvider } from "./contexts/userContext";
 import { UserProfilePage } from "./components/pages/userProfilePage/userProfilePage";
+import { CreatePostPage } from "./components/pages/createPostPage/createPostPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/producto/:Id" element={<DetailPage />} />
                 <Route path="/profile" element={<UserProfilePage />} />
+                <Route path="/post" element={<CreatePostPage />} />
               </Routes>
             </div>
           </div>
