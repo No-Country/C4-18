@@ -5,7 +5,8 @@ import { NavLink } from "react-router-dom";
 import "./botonSingIn.scss";
 
 export const BotonSignIn = () => {
-  const { userSession } = useUser();
+
+  const { userSession, logoutUser } = useUser();
 
   const [avatarUser, setAvatarUser] = useState({});
 
@@ -23,15 +24,15 @@ export const BotonSignIn = () => {
               alt="User profile"
               className="imgAvatar"
             />
-          </NavLink>
+          </NavLink>          
           <img
             src={logOutDark}
             alt="Log Out"
             className="logOut"
-            onClick={() => {
-              console.log("click");
+            onClick={(e) => {
+              logoutUser()              
             }}
-          />
+          />         
         </div>
       ) : (
         <div className="signIn">

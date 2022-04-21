@@ -2,7 +2,7 @@ import './formSingIn.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { Formik } from 'formik';
-import google from '../../assets/googleBtn-Desktop.svg';
+// import google from '../../assets/googleBtn-Desktop.svg';
 import { useUser } from '../../../../../contexts/userContext';
 
 
@@ -77,11 +77,11 @@ function FormSingIn() {
 								Iniciar Sesión
 							</button>
 
-							<h5>O puedes registrarte mediante una red social</h5>
+							{/* <h5>O puedes registrarte mediante una red social</h5>
 
 							<div className='googleSection'>
 								<img src={google} alt="googltBtn"/>
-							</div>
+							</div> */}
 
 							<p>No tienes una cuenta?  <Link to="/login/register"><span>Registrate</span></Link></p>
 						</form>

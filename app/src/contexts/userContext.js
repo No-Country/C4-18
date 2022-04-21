@@ -1,5 +1,6 @@
 
 import { useContext, createContext, useState, useEffect } from "react";
+import Swal from 'sweetalert2'
 
 
 export const UserContext = createContext();
@@ -115,6 +116,40 @@ export const UserProvider = ({children})=>{
     }
     }
 
+    const logoutUser = async ()=>{
+       
+        try {  
+           
+            Swal.fire({
+                title: 'Do you want to logout?',                
+                showCancelButton: true,
+                confirmButtonText: 'Ok',                
+              }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+
+                    fetch("http://localhost:8000/api/auth/logout", {
+                method: "POST",                
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': userSession.token                    
+                },
+            }).then(res => res.json()).then(res => res)
+                    sessionStorage.clear()            
+                    setUserStorage(null)                   
+                    document.location.href = '/'
+                } 
+              })
+            
+            
+            
+        } catch (error) {
+            console.log("ERROR EN LOGOUT: ", error)      
+        }
+    }
+
+
+
 
     return(
         <UserContext.Provider
@@ -123,7 +158,8 @@ export const UserProvider = ({children})=>{
                 updateUser,
                 signInUser,
                 signUpUser,
-                userSession
+                userSession,
+                logoutUser
             }}
         >
             {children}

@@ -7,15 +7,15 @@ const router = express.Router();
 const { validateLogin, validateSignUp } = require('../validators/auth');
 
 
-// Post = /api/login - Loguear usuario
+// Post = /api/auth/login - Loguear usuario
 router.post("/login", validateLogin, loginController);
 
 
-// Post = /api/signup - Crear usuario
+// Post = /api/auth/signup - Crear usuario
 router.post("/signup", validateSignUp, signUpController);
 
 
-// Post = /api/logout - Logout usuario
+// Post = /api/auth/logout - Logout usuario
 router.post("/logout", authMiddleware, logoutController);
 
 

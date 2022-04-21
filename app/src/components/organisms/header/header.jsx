@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import "./header.scss";
 
 export const Header = () => {
-  const { userSession } = useUser();
+  const { userSession, logoutUser } = useUser();
   const [avatarUser, setAvatarUser] = useState({});
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export const Header = () => {
               alt="Log Out"
               className="logOut"
               onClick={() => {
-                console.log("click");
+                logoutUser();                
               }}
             />
           ) : (

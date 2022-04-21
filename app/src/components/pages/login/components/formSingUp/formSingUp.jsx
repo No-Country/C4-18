@@ -1,14 +1,14 @@
 import './formSingUp.scss';
 import { Link } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
-import google from '../../assets/googleBtn-Desktop.svg';
+// import google from '../../assets/googleBtn-Desktop.svg';
 import { useUser } from '../../../../../contexts/userContext';
 import { useNavigate } from 'react-router-dom';
 
 function FormSingUp() {
 
-	const {signUpUser, userSession}= useUser()
+	const {signUpUser}= useUser()
 	const history = useNavigate()
 
 	const handleSignUp = (values)=> {
@@ -107,11 +107,11 @@ function FormSingUp() {
 								Registrar Usuario
 							</button>
 
-							<h5>O puedes registrarte mediante una red social</h5>
+							{/* <h5>O puedes registrarte mediante una red social</h5>
 
 							<div className='googleSection'>
 								<img src={google} alt="googltBtn" />
-							</div>
+							</div> */}
 
 							<p>Tienes una cuenta? <Link to="/login"><span>Iniciar Sesión</span></Link></p>
 						</form>
