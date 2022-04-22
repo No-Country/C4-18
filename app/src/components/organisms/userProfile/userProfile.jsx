@@ -12,8 +12,7 @@ export const UserProfile = () => {
     console.log("USER EN USERPROFILE: ", userSession);
     setTimeout(() => {
       asyncImg()
-    }, 1000);
-    
+    }, 1000);    
   }, [userSession]);
 
   const handleUpdate = (value)=>{
@@ -59,7 +58,7 @@ export const UserProfile = () => {
             <InputUser value={userSession.nombre} textData="Nombre y Apellido" nameInput='nombre' handleUpdate={handleUpdate}/>
             <InputUser value={userSession.dni} textData="Documento" nameInput='dni' handleUpdate={handleUpdate} />
             <InputUser value={userSession.telefono} textData="Telefono" nameInput='telefono' handleUpdate={handleUpdate} />
-            <InputUser value={userSession.fechaDeNacimiento} type="date" textData="Fecha de nacimiento" nameInput='fechaDeNacimiento' handleUpdate={handleUpdate} />
+            <InputUser value={userSession.fechaDeNacimiento.slice(0, 10)} type="date" data-date-format="DD MM YYYY" textData="Fecha de nacimiento" nameInput='fechaDeNacimiento' handleUpdate={handleUpdate} />
             <InputUser value={userSession.direccion} textData="Direccion" nameInput='direccion' handleUpdate={handleUpdate} />
         </div>
       </div>
