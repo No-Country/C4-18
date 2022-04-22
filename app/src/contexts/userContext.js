@@ -2,14 +2,11 @@ import { useContext, createContext, useState, useEffect } from "react";
 import Swal from 'sweetalert2'
 import { Toast } from "../components/atoms/atomsIndex";
 
-
-
 export const UserContext = createContext();
 
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({children})=>{
-
 
     const [userSession, setUserSession] = useState(null)
 
@@ -147,8 +144,9 @@ export const UserProvider = ({children})=>{
                 },
             }).then(res => res.json()).then(res => res)
                     sessionStorage.clear()            
-                    setUserStorage(null)                   
+                    setUserStorage(null)   
                     document.location.href = '/'
+                               
                 } 
             })
             
