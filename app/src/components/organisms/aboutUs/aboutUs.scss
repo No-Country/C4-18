@@ -1,0 +1,122 @@
+
+.aboutUs-background{
+    background: url("../../atoms/fondoAboutUs.png");
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    
+}
+
+.aboutUs{
+    background: rgba(0, 0, 0, 0.53);
+    width: 100%;
+    //height: 100%;
+    //display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutUs-title{
+    padding: 20px 20px;
+
+    h2{
+        color: white;
+    }
+    .lineRed {
+        margin-top: 3px;
+        height: 3px;
+        border-bottom: #f00707 3px solid;
+        width: 32vw; //40.625%
+    }
+    .lineGrey {
+        height: 1px;
+        margin-bottom: 50px;
+        border-top: #e0e6e8 1px solid;
+        width: 48vw; //59.375%
+        transform: translate(32vw, -2px);
+    }
+}
+
+.video-iframe{
+    text-align: center;
+    padding: 20px 0px;
+    
+    iframe{
+        padding: 0px 10px;
+        height: 315px;
+        width: 350px;
+        
+    }
+}
+
+.aboutUs-paragraph {
+    text-align: center;    
+    background: rgba(255, 255, 255, 0.40);
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+
+    p{
+        text-align: start;
+        color: white;
+        margin: 8px 0px;
+    }
+}
+
+@media (min-width: 361px){
+
+    .video-iframe{
+        
+        iframe{
+           
+            min-width: 90vw;
+            min-height: 90vh;
+        }
+    }
+
+}
+
+@media (min-width: 769px){
+
+    .aboutUs{
+        height: 100%;
+    }
+
+    .aboutUs-main{
+        display: flex;
+        justify-content: center;
+    }
+
+    .video-iframe{
+        padding: 0px 0px;
+        iframe{
+           
+            min-width: 45vw;
+            min-height: 70vh;
+        }
+    }
+
+    .aboutUs-paragraph {
+        width: 45vw;
+        border-radius: 8px;
+        p{            
+            margin: 3px 0px;
+        }
+    }
+
+}
+
+@media (min-width: 900px){
+    .aboutUs-paragraph {
+        
+        p{            
+            margin: -20px 0px;
+        }
+    }
+
+}
