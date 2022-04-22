@@ -8,7 +8,7 @@ export const ContactViewContainer = () => {
             
             <div className="contactTitle">
                 <h2 className="contactH2">
-                    contactanos
+                    Contactanos
                 </h2>
                 <div className="lineRed"></div>
                 <div className="lineGrey"></div>

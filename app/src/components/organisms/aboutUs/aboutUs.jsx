@@ -16,9 +16,7 @@ export const AboutUs = () => {
             <div className="aboutUs-main">
                 <div className="aboutUs-video">
                     <div className="video-iframe">
-                        <iframe width="560" src="https://www.youtube.com/embed/sca4VG9b0NY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-                        </iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CMvnEnQ4Un0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>                
                 </div> {/* fin aboutUs-video */}
                 <div className="aboutUs-paragraph">

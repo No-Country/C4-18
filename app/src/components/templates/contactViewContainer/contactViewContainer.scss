@@ -5,40 +5,47 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-  overflow-y: auto;
+//   overflow-y: auto;
+margin-top: 140px;
 } 
 
 .contactView{
     background: rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 100vh;
-    
+    padding: 15px;
 }
 
 .contactTitle{
-    margin: 30px 0px 10px 20px;
+    // margin: 30px 0px 10px 20px;
     .contactH2{
-        font-size: 24;
+        // font-size: 24;
         color: white;
-        font-weight: 200;
+        // font-weight: 200;
+        font-family: "Philosopher", sans-serif;
+        font-size: 2rem;
     }
     .lineRed {
         margin-top: 3px;
         height: 3px;
         border-bottom: #f00707 3px solid;
-        width: 32vw; //40.625%
+        // width: 32vw; //40.625%
+        width: 325px;
+      max-width: 30%;
     }
     .lineGrey {
         height: 1px;
         margin-bottom: 50px;
         border-top: #e0e6e8 1px solid;
-        width: 48vw; //59.375%
-        transform: translate(32vw, -2px);
+        // width: 48vw; //59.375%
+        // transform: translate(32vw, -2px);
+        width: 800px;
+      max-width: 80%;
     }
 }
 
 .contactContainerForm{
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -49,6 +56,9 @@
     justify-items: center;
 
     label{
+        font-family: 'Roboto', 500, sans-serif;
+        font-weight: bold;
+        font-size: 1.2rem;
         justify-self: flex-start;
         color: white;
         margin-top: 10px;
